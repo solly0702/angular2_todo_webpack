@@ -72,6 +72,7 @@ export class ApiService {
   }
 
   addPromise(name: string, color: string, dueDate: string) {
+    console.log("hello")
     return promiseData.push({name, color, dueDate});
   }
 
