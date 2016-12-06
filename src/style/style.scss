@@ -1,0 +1,9 @@
+//Core Partial
+@import "mixins";
+@import "variables";
+@import "base";
+
+//Import Modules
+@import "./modules/app.scss";
+@import "./modules/home.scss";
+@import "./modules/todo.scss";

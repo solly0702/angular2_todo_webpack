@@ -1,0 +1,15 @@
+<header class="container">
+  <nav>
+    <a [routerLink]="['']" class="col-xs-6 text-center">Home</a>
+    <a [routerLink]="['todo']" class="col-xs-6 text-center">Todo List</a>
+  </nav>
+</header>
+
+<main class="container">
+  <!-- <app-home [ninja]="ninja" (onTest)="test($event)"><h2>Welcome to The Ninja Directory</h2></app-home> -->
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <h1>Footer Section</h1>
+</footer>

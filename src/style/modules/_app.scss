@@ -1,0 +1,11 @@
+header {
+  @include border-radius(10px);
+  margin: 20px 0;
+  nav {
+    a {
+      font-size: 2em;
+      color: #FFFFFF;
+      padding: 10px 0;
+    }
+  }
+}

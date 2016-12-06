@@ -1,0 +1,30 @@
+body {
+  background: #191919;
+  margin-top: 100px;
+};
+
+header {
+  background: #118C4E;
+};
+
+main {
+  background: #DFE2DB;
+  @include border-radius(10px);
+  padding: 20px;
+  article {
+    @include border-radius(10px);
+    background: #FFFFFF;
+    color: #606060;
+    .content {
+      padding: 10px 0;
+    }
+  }
+};
+
+footer {
+  background: #FFF056;
+};
+
+a {
+  text-decoration: none !important;
+};

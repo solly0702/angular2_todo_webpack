@@ -1,0 +1,48 @@
+<article class="todo-list">
+  <div class="content">
+    <h2 class="text-center">Todo List</h2>
+    <form class="form-inline search-bar">
+      <div class="form-group pull-right search-group">
+        <label for="search">Search Filter: </label>
+        <input type="text" name="term" class="form-control" id="search" placeholder="Type the Search Term" [(ngModel)]="term"/>
+      </div>
+    </form>
+    <ul class="list">
+      <li *ngFor="let todo of todos | filter:term">
+        <div class="single-list">
+          <p class="row">
+            <span [ngStyle] = "{background: todo.color}" class="col-md-1">{{todo.color}} Flags</span>
+            <span class="todo col-md-6">{{todo.name}}</span>
+            <span class="due-date col-md-2 text-center">{{todo.dueDate | date: "longDate" }}</span>
+            <button class="btn btn-danger pull-right col-md-1 delete" (click)="deletePromise(todo.name)">Delete</button>
+            <!-- ngIf to check status -->
+            <button class="btn btn-success pull-right col-md-1 status" *ngIf="todo.done" (click)="todo.done = !todo.done">Done!</button>
+            <button class="btn btn-warning pull-right col-md-1 status" *ngIf="!(todo.done)" (click)="todo.done = !todo.done">Not Yet!</button>
+            <!--  -->
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <form class="form add-todo">
+    <div class="form-group row">
+      <label for="name" class="col-xs-2 text-center">Name:</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" [(ngModel)]="name" name="name"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="belt" class="col-xs-2 text-center">Flag Color:</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" [(ngModel)]="color" name="color" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="date" class="col-xs-2 text-center">Date:</label>
+      <div class="col-xs-7">
+        <input type="date" class="form-control" [(ngModel)]="dueDate" name="date"/>
+      </div>
+    </div>
+    <button class="btn btn-primary col-xs-2 pull-right " (click)="addPromise(name, color, dueDate)">Add Todos</button>
+  </form>
+</article>
